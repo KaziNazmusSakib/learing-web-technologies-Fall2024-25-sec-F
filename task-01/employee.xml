@@ -1,0 +1,32 @@
+<employees>
+    <employee>
+        <id>1</id>
+        <name>name
+            <firstname>John</firstname>
+            <lastname>Doe</lastname>
+        </name>
+        <address>H# 38,R#3 Banani, Dhaka</address>
+        <department>Sales</department>
+        <salary>$20000</salary>
+    </employee>
+    <employee>
+        <id>2</id>
+        <name>name
+            <firstname>Mark</firstname>
+            <lastname>Zuckerberg</lastname>
+        </name>
+        <address>Flat#A/1,H#20,R#18,Mirpur,Dhaka</address>
+        <department>Accounts</department>
+        <salary>$12000</salary>
+    </employee>
+    <employee>
+        <id>3</id>
+        <name>name
+            <firstname>Ala</firstname>
+            <lastname>Voski</lastname>
+        </name>
+        <address>H338,R#3,Motijheel</address>
+        <department></department>Human Resource
+        <salary>$30000</salary>
+    </employee>
+</employees>
