@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title></title>
+    <script>
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var nameRegex = /^[a-zA-Z][a-zA-Z.-]*$/;
+            var words = name.trim().split(/\s+/);
+
+            // Condition A: Cannot be empty
+            if (name === "") {
+                alert("Email cannot be empty.");
+                return false;
+            }
+
+            // Condition B: Contains at least two words
+            if (words.length < 2) {
+                alert("Email must contain at least two words.");
+                return false;
+            }
+
+            // Condition C: Must start with a letter
+            if (!/^[a-zA-Z]/.test(name)) {
+                alert("Email must start with a letter.");
+                return false;
+            }
+
+            // Condition D: Must contain only letters, period, or dash
+            if (!nameRegex.test(name)) {
+                //alert("Name can only contain letters, periods, and dashes.");
+                return false;
+            }
+
+            return true; // If all conditions pass
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <form name="myForm" action="" onsubmit="return validateForm()" style="width: 15%; height: 20%;">
+        <fieldset>
+            <legend>Email</legend>
+            <table border="0" style="width: 50%; height: 50%;">
+                <tr>
+                    <td>
+                        <!-- Input field with placeholder -->
+                        <input type="text" name="email" placeholder="" />
+                        <br>
+                        <!-- Horizontal line added here -->
+                        <hr>
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
