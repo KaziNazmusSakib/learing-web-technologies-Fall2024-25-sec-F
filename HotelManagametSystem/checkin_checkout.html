@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check-In & Check-Out</title>
+</head>
+<body>
+    <h1>Check-In & Check-Out</h1>
+    <form method="post" action="controller/checkInOut.php">
+        Guest Name: <input type="text" name="guest_name" value="" /><br><br>
+        Room Number: <input type="text" name="room_number" value="" /><br><br>
+        Action: 
+        <select name="action">
+            <option value="check_in">Check-In</option>
+            <option value="check_out">Check-Out</option>
+        </select><br><br>
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
