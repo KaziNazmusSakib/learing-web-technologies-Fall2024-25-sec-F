@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Signup</title>
+    <script>
+        function validateForm() {
+            const empname = document.getElementById("name").value.trim();
+            const contactNo = document.getElementById("contactNo").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            const empnameErr = document.getElementById("name-error");
+            const contactNoErr = document.getElementById("contactNo-error");
+            const usernameErr = document.getElementById("username-error");
+            const passwordErr = document.getElementById("password-error");
+
+            empnameErr.textContent = "";
+            contactNoErr.textContent = "";
+            usernameErr.textContent = "";
+            passwordErr.textContent = "";
+
+            let isValid = true;
+
+            if (empname === "" || /\d/.test(empname)) {
+                empnameErr.textContent = "Please enter your name properly.";
+                isValid = false;
+            }
+
+            if (contactNo === "" || isNaN(contactNo)) {
+                contactNoErr.textContent = "Please enter a valid contact number.";
+                isValid = false;
+            }
+
+            if (username === "") {
+                usernameErr.textContent = "Please enter your username.";
+                isValid = false;
+            }
+
+            if (password === "" || password.length < 6) {
+                passwordErr.textContent = "Please enter a password with at least 6 characters.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function resetErrors() {
+            document.getElementById("name-error").textContent = "";
+            document.getElementById("contactNo-error").textContent = "";
+            document.getElementById("username-error").textContent = "";
+            document.getElementById("password-error").textContent = "";
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="../Controller/signupCheck.php" onsubmit="return validateForm()">
+        empname: <input type="text" id="name" name="name" value="" /> <span id="name-error" style="color: red;"></span><br>
+        contact no: <input type="text" id="contactNo" name="contact no" value="" /> <span id="contactNo-error" style="color: red;"></span><br>
+        username: <input type="text" id="username" name="username" value="" /> <span id="username-error" style="color: red;"></span><br>
+        password: <input type="password" id="password" name="password" value="" /> <span id="password-error" style="color: red;"></span><br>
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+</body>
+</html>
